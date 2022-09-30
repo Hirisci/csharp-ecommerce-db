@@ -12,7 +12,7 @@ using csharp_ecommerce_db;
 namespace csharp_ecommerce_db.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
-    [Migration("20220930131213_init")]
+    [Migration("20220930144241_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
