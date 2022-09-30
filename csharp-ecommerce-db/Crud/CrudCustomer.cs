@@ -41,12 +41,25 @@ namespace csharp_ecommerce_db.Crud
         {
             using (EcommerceContext db = new EcommerceContext())
             {
-                Customer LastCustomer = CrudCustomer.GetCustomer(id);
+                Customer LastCustomer = db.Customers.Where(c => c.Id == id).First();
                 LastCustomer.Name = customer.Name;
                 LastCustomer.LastName = customer.LastName;
                 LastCustomer.Email = customer.Email;
+                db.SaveChanges();
             }
         }
+
+        public static void DeleteCustomer(int id)
+        {
+            using (EcommerceContext db = new EcommerceContext())
+            {
+                Customer LastCustomer = db.Customers.Where(c => c.Id == id).First();
+                db.Customers.Remove(LastCustomer);
+                db.SaveChanges();
+            }
+        }
+
+
 
     }
 }

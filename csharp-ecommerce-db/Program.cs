@@ -13,3 +13,17 @@ foreach(Customer c in CrudCustomer.GetAllCustomer())
     Console.WriteLine($"{c.Name} {c.LastName} {c.Email}");
 }
 
+CrudCustomer.EditCustomer(2,new Customer() { Name = "Alan", LastName= "Bruno", Email="test@test.com"});
+
+foreach (Customer c in CrudCustomer.GetAllCustomer())
+{
+    Console.WriteLine($"{c.Name} {c.LastName} {c.Email}");
+}
+
+CrudCustomer.DeleteCustomer(2);
+
+foreach (Customer c in CrudCustomer.GetAllCustomer())
+{
+    Console.WriteLine($"{c.Name} {c.LastName} {c.Email}");
+}
+
